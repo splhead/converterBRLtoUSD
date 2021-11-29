@@ -7,6 +7,8 @@ import android.view.View;
 
 import com.splhead.conversor.databinding.ActivityMainBinding;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -28,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
             return BRL;
         }
 
-        double dollars = Double.parseDouble(BRL) * 5.35;
-        return String.valueOf(dollars);
+        DecimalFormat formatter = new DecimalFormat("#.##");
+
+        return formatter.format(Double.parseDouble(BRL) / 5.35);
     }
 }
